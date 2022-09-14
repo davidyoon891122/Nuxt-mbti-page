@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1></h1>
-        <Button />
+        <Button styleType="blue"/>
         <Progress />
     </div>
 </template>
@@ -15,7 +15,7 @@ export default {
 
     },
     methods: {
-        
+
     }
 }
 </script>
