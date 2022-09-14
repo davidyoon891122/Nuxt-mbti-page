@@ -14,6 +14,32 @@ export const state = {
                     value: "i"
                 }
             ]
+        },
+        {
+            q: "당신은 외향적이십니까?",
+            a: [
+                {
+                    text: "네",
+                    value: "e"
+                },
+                {
+                    text: "아니오",
+                    value: "i"
+                }
+            ]
+        },
+        {
+            q: "당신은 외향적이십니까?",
+            a: [
+                {
+                    text: "네",
+                    value: "e"
+                },
+                {
+                    text: "아니오",
+                    value: "i"
+                }
+            ]
         }
     ],
     result: {
@@ -32,8 +58,8 @@ export const state = {
 // commit, state를 변경한다
 export const mutations = {
     // 질문에 응답을 했을 때, 저장 되도록 반영한다.
-    SET_USER_TYPE(state, payload) {
-        state.result[payload.type] += 1
+    SET_USER_TYPE(state, type) {
+        state.result[type] += 1
         state.page += 1
     },
     PAGE_RESET(state) {
@@ -48,14 +74,17 @@ export const mutations = {
             p: 0,
             j: 0,
         }
+    },
+    SET_PAGE(state, page) {
+        state.page = page
     }
 }
 
 // 액션
 export const actions = {
-    clickButton ({commit}, payload) {
+    clickButton ({commit}, type) {
         // console.log(Object.keys(context))
-        commit("SET_USER_TYPE", payload)
+        commit("SET_USER_TYPE", type)
     },
     clickResetButton({commit}) {
         commit("PAGE_RESET")

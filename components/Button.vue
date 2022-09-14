@@ -1,5 +1,5 @@
 <template>
-    <a class="[styleType]" @click.prevent="clickEvent">{{text}}</a>
+    <a :class="[styleType]" @click.prevent="clickEvent">{{text}}</a>
 </template>
 <script>
 export default {

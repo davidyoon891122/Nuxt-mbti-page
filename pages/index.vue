@@ -4,14 +4,17 @@
     <img src="" alt="원피스 캐릭터들"></img>
     <h1>나와 닮은 원피스 캐릭터 찾기!</h1>
     <h2>나와 닮은 원피스 캐릭터는 누구일까요?</h2>
-    <Button text="테스트 시작!" />
+    <Button text="테스트 시작!" :clickEvent="startTest"/>
   </main>
-  <!-- 퀴즈 페이지 -->
-  <main v-else></main>
+  <!-- 질문 페이지 -->
+  <main v-else>
+    <Question />
+  </main>
 </template>
 
 <script>
 import Button from '../components/Button.vue';
+import Question from '../components/Question.vue';
 /*
 * 메인 페이지 않에 들어갈 것
 * 1. 인트로 페이지
@@ -21,13 +24,15 @@ import Button from '../components/Button.vue';
 export default {
     computed: {
         page() {
-            return 0;
-        },
-        quiz() {
-            return [];
+            return this.$store.state.page;
         }
     },
-    components: { Button }
+    components: { Button, Question },
+    methods: {
+      startTest() {
+        this.$store.commit("SET_PAGE", 1)
+      }
+    }
 }
 </script>
 
