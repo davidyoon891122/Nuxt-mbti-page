@@ -6,7 +6,7 @@
             :key="index"
             :text="item.text"
             :clickEvent="() => {
-                $store.dispatch('clickButton', item.value)
+                clickButton(item);
             }"
         />
         <Progress />
@@ -30,7 +30,22 @@ export default {
         }
     },
     methods: {
+        clickButton(item) {
+            this.$store.dispatch('clickButton', item.value)
+            
+            // 마지막 질문에만 라우터 이동
+            if (this.page === this.$store.state.questions.length + 1) {
+                const result = this.$store.state.result
 
+                this.$router.push({
+                    name: 'result-mbti',
+                    params: {
+                        mbti: `${result.e ? "e" : "i"}${result.s ? "s" : "n"}${result.t ? "t" : "f"}${result.p ? "p" : "j"}`
+                    }
+                })
+            }
+            
+        }
     }
 }
 </script>

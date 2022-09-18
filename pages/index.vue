@@ -7,7 +7,7 @@
     <Button text="테스트 시작!" :clickEvent="startTest"/>
   </main>
   <!-- 질문 페이지 -->
-  <main v-else>
+  <main v-else-if="page < 5">
     <Question />
   </main>
 </template>

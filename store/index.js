@@ -16,28 +16,41 @@ export const state = {
             ]
         },
         {
-            q: "당신은 외향적이십니까?",
+            q: "당신은 감각적이십니까?",
             a: [
                 {
                     text: "네",
-                    value: "e"
+                    value: "s"
                 },
                 {
                     text: "아니오",
-                    value: "i"
+                    value: "n"
                 }
             ]
         },
         {
-            q: "당신은 외향적이십니까?",
+            q: "당신은 감정적이십니까?",
             a: [
                 {
                     text: "네",
-                    value: "e"
+                    value: "f"
                 },
                 {
                     text: "아니오",
-                    value: "i"
+                    value: "t"
+                }
+            ]
+        },
+        {
+            q: "당신은 계획적이십니까?",
+            a: [
+                {
+                    text: "네",
+                    value: "j"
+                },
+                {
+                    text: "아니오",
+                    value: "p"
                 }
             ]
         }
