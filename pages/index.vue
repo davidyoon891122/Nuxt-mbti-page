@@ -1,7 +1,7 @@
 <template>
   <!-- 인트로 페이지 -->
   <main v-if="page === 0">
-    <img src="" alt="원피스 캐릭터들"></img>
+    <img src="/onepiece.jpg" alt="원피스 캐릭터들"></img>
     <h1>나와 닮은 원피스 캐릭터 찾기!</h1>
     <h2>나와 닮은 원피스 캐릭터는 누구일까요?</h2>
     <Button text="테스트 시작!" :clickEvent="startTest"/>
@@ -37,20 +37,4 @@ export default {
 </script>
 
 <style>
-  main {
-    padding: 30px 0;
-    width: 100%;
-    max-width: 360px;
-    margin: auto;
-    text-align: center;
-  }
-  h1 {
-    font-size: 1.8em;
-    margin-bottom: 25px;
-  }
-  h2 {
-    font-size: 1.2em;
-    color: rgb(241, 218, 187);
-    margin-bottom: 25px;
-  }
 </style>
