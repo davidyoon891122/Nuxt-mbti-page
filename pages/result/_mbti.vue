@@ -26,6 +26,11 @@ export default {
     },
     created() {
         this.mbti = this.$route.params.mbti;
+
+        if (this.result[this.$route.params.mbti] === undefined) {
+            this.$router.push({name: "index"})
+        }
+        
     },
     components: { Button },
     methods: {
